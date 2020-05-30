@@ -26,7 +26,7 @@ export default {
     },
     data() {
         return {
-            cardComponent: 'Correct',
+            cardComponent: 'Question',
             firstNumber: Math.floor(Math.random() * 80 + 20), // number between 20 and 100
             secondNumber: Math.floor(Math.random() * 50 + 10), // number between 10 and 60
             operationNumber: Math.floor(Math.random() * 4 + 1), // number between 1 and 4
@@ -92,6 +92,10 @@ h1 {
     font-weight: bold;
     font-size: 1.2rem;
     height: 10rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 button {
     font-size: 1.2rem;
@@ -99,5 +103,14 @@ button {
     border: none;
     background: inherit;
     cursor: pointer;
+    color: white;
+}
+.message {
+    text-align: center;
+    margin: 0;
+}
+.header {
+    font-size: 1.4rem;
+    margin: 0;
 }
 </style>
