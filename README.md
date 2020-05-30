@@ -1,4 +1,4 @@
-# the-super_quiz
+# The Super Quiz
 
 ## Project setup
 ```
