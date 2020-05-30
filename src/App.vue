@@ -1,14 +1,24 @@
 <template>
     <div id="app">
         <h1>The Super Quiz</h1>
-        <component :is="cardComponent" :answer="correctAnswer">
-            <template v-slot:question>
-                <p>
-                    What is {{ firstNumber }} {{ operationSymbol }}
-                    {{ secondNumber }}?
-                </p>
-            </template>
-        </component>
+        <transition
+            mode="out-in"
+            enter-active-class="bounce-enter-active "
+            leave-active-class="bounce-leave-active"
+        >
+            <component
+                :is="Component"
+                :answer="correctAnswer"
+                @changeComponent="Component = $event"
+            >
+                <template v-slot:question>
+                    <p>
+                        What is {{ firstNumber }} {{ operationSymbol }}
+                        {{ secondNumber }}?
+                    </p>
+                </template>
+            </component>
+        </transition>
     </div>
 </template>
 
@@ -26,10 +36,10 @@ export default {
     },
     data() {
         return {
-            cardComponent: 'Question',
-            firstNumber: Math.floor(Math.random() * 80 + 20), // number between 20 and 100
-            secondNumber: Math.floor(Math.random() * 50 + 10), // number between 10 and 60
-            operationNumber: Math.floor(Math.random() * 4 + 1), // number between 1 and 4
+            Component: 'Question',
+            firstNumber: null,
+            secondNumber: null,
+            operationNumber: null,
         }
     },
     computed: {
@@ -58,6 +68,23 @@ export default {
             }
         },
     },
+    watch: {
+        Component() {
+            if (this.Component === 'Question') {
+                this.setValues()
+            }
+        },
+    },
+    methods: {
+        setValues() {
+            this.firstNumber = Math.floor(Math.random() * 80 + 20) // number between 20 and 100
+            this.secondNumber = Math.floor(Math.random() * 50 + 10) // number between 10 and 60
+            this.operationNumber = Math.floor(Math.random() * 4 + 1) // number between 1 and 4
+        },
+    },
+    created() {
+        this.setValues()
+    },
 }
 </script>
 
@@ -73,7 +100,7 @@ body {
 #app {
     max-width: 400px;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
 }
 * {
     box-sizing: border-box;
@@ -112,5 +139,22 @@ button {
 .header {
     font-size: 1.4rem;
     margin: 0;
+}
+.bounce-enter-active {
+    animation: bounce-in 0.75s;
+}
+.bounce-leave-active {
+    animation: bounce-in 0.75s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 </style>

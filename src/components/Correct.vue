@@ -2,7 +2,7 @@
     <div class="component-body">
         <p class="header">Correct!</p>
         <p class="message">Yes! {{ answer }} is the answer.</p>
-        <button>Next</button>
+        <button @click="$emit('changeComponent', 'Question')">Next</button>
     </div>
 </template>
 

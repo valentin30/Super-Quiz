@@ -2,7 +2,7 @@
     <div class="component-body">
         <p class="header">Wrong!</p>
         <p class="message">No! {{ answer }} is the answer.</p>
-        <button>Try Again</button>
+        <button @click="$emit('changeComponent', 'Question')">Try Again</button>
     </div>
 </template>
 
