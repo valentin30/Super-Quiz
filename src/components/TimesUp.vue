@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .component-body {
-    background-color: lightsalmon;
+    background-color: rgb(255, 204, 94);
     padding: 1.5rem 1.2rem 1rem;
 }
 button {
