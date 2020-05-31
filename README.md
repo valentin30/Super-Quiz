@@ -1,4 +1,4 @@
-# The Super Quiz
+# Super Quiz
 
 ## This is a simple math game with a mobile friendly design, created with Vue js 
 
