@@ -43,8 +43,8 @@ export default {
     },
     computed: {
         answers() {
-            let correctAnswerIndex = Math.floor(Math.random() * 4)
-            let answers = []
+            const correctAnswerIndex = Math.floor(Math.random() * 4)
+            const answers = []
             for (let i = 0; i < 4; i++) {
                 answers.push(
                     Math.floor(Math.random() * this.answer) +
