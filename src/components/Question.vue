@@ -3,12 +3,13 @@
         <p class="timer">{{ this.timer }}</p>
         <slot name="question"> </slot>
         <div class="answers">
-            <button>1</button>
-            <button @click="$emit('changeComponent', 'Correct')">
+            <button
+                v-for="(answer, index) in answers"
+                :key="index"
+                @click="submitAnswer(answer)"
+            >
                 {{ answer }}
             </button>
-            <button>1</button>
-            <button>1</button>
         </div>
     </div>
 </template>
@@ -31,6 +32,31 @@ export default {
                 }
                 this.timer -= 1
             }, 1000)
+        },
+        submitAnswer(answer) {
+            if (this.answer === answer) {
+                this.$emit('changeComponent', 'Correct')
+            } else {
+                this.$emit('changeComponent', 'Wrong')
+            }
+        },
+    },
+    computed: {
+        answers() {
+            let correctAnswerIndex = Math.floor(Math.random() * 4)
+            let answers = []
+            for (let i = 0; i < 4; i++) {
+                answers.push(
+                    Math.floor(Math.random() * this.answer) +
+                        Math.floor(
+                            Math.random() *
+                                (Math.random() + Math.random()) *
+                                this.answer
+                        )
+                )
+            }
+            answers[correctAnswerIndex] = this.answer
+            return answers
         },
     },
     mounted() {
