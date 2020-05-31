@@ -1,5 +1,7 @@
 # The Super Quiz
 
+## hosted at: https://super-quiz-1db75.web.app/
+
 ## Project setup
 ```
 npm install
