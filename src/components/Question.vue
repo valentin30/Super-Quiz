@@ -85,9 +85,10 @@ p {
 }
 .answers {
     display: flex;
-    justify-content: center;
-}
-button {
-    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    width: 100%;
+    align-self: center;
 }
 </style>

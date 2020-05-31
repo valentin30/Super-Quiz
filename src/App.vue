@@ -105,6 +105,7 @@ body {
 }
 * {
     box-sizing: border-box;
+    -webkit-appearance: none;
 }
 *:focus {
     outline: none;
@@ -133,6 +134,11 @@ button {
     background: inherit;
     cursor: pointer;
     color: white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
 }
 .message {
     text-align: center;

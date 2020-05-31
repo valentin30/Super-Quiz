@@ -1,7 +1,7 @@
 <template>
     <div class="component-body">
         <p class="header">Times Up!</p>
-        <p class="message">By the way {{ answer }} is the answer.</p>
+        <p class="message">By the way, {{ answer }} is the answer.</p>
         <button @click="$emit('changeComponent', 'Question')">Try Again</button>
     </div>
 </template>
