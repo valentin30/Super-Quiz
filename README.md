@@ -1,21 +1,5 @@
 # The Super Quiz
 
-## hosted at: https://super-quiz-1db75.web.app/
+## This is a simple mathematical game for mobile devices created with Vue js 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## hosted at: https://super-quiz-1db75.web.app
