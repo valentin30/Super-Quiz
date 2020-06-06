@@ -90,11 +90,11 @@ export default {
 
 <style>
 body {
-    font-family: sans-serif;
+    font-family: 'Quicksand';
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     margin: 0;
     background-color: seashell;
 }
@@ -113,6 +113,7 @@ body {
 h1 {
     text-align: center;
     color: #555;
+    margin: 0 0 1rem;
 }
 .component-body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -163,6 +164,22 @@ button {
     }
     100% {
         transform: scale(1);
+    }
+}
+@media (min-width: 800px) {
+    #app {
+        transform: scale(1.2);
+    }
+}
+@media (min-width: 1000px) {
+    #app {
+        transform: scale(1.3);
+    }
+}
+
+@media (min-width: 1200px) {
+    #app {
+        transform: scale(1.4);
     }
 }
 </style>

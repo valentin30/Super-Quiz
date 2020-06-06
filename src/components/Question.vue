@@ -28,6 +28,7 @@ export default {
             this.timer = 9
             this.interval = setInterval(() => {
                 if (!this.timer) {
+                    this.streak = 0
                     this.$emit('changeComponent', 'TimesUp')
                 }
                 this.timer -= 1
@@ -35,8 +36,10 @@ export default {
         },
         submitAnswer(answer) {
             if (this.answer === answer) {
+                this.streak++
                 this.$emit('changeComponent', 'Correct')
             } else {
+                this.streak = 0
                 this.$emit('changeComponent', 'Wrong')
             }
         },
@@ -83,6 +86,7 @@ p {
     position: relative;
     text-align: end;
 }
+
 .answers {
     display: flex;
     flex-wrap: wrap;
